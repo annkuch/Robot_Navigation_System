@@ -28,8 +28,6 @@ class ReplayBuffer(object):
             self.NS_BUF[self.count] = list(next_state)
             self.DONE_BUF[self.count] = done
             self.count += 1
-
-        # 数据个数超过buffer大小, 先进先出
         else:
             self.S_BUF[:self.count - 1] = self.S_BUF[1:]
             self.A_BUF[:self.count - 1] = self.A_BUF[1:]
